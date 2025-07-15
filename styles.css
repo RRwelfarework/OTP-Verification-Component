@@ -1,0 +1,197 @@
+/* =========================
+   CSS Reset & Variables
+========================= */
+:root {
+  --bg-gradient: linear-gradient(to top right, #fca5a5, #c7d2fe);
+  --bg-dark: #1e1e2f;
+  --box-dark: #1e293b;
+  --text-light: #f8fafc;
+  --text-muted: #cbd5e1;
+  --accent: #6366f1;
+  --success: #4ade80;
+  --error: #f87171;
+  --border-default: #475569;
+  --shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  --radius: 10px;
+  --font-family: 'Segoe UI', sans-serif;
+}
+
+/* =========================
+   Base Layout
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* =========================
+   Simulated Browser
+========================= */
+.browser {
+  background-color: var(--bg-dark);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Window bar with dots */
+.window-bar {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+/* =========================
+   OTP Card Content
+========================= */
+.otp-card {
+  text-align: center;
+  color: var(--text-light);
+  margin-top: 35px;
+}
+
+.otp-card h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.otp-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* =========================
+   OTP Input Box
+========================= */
+.otp-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.otp-digit {
+  width: 60px;
+  height: 70px;
+  font-size: 28px;
+  text-align: center;
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius);
+  background-color: var(--box-dark);
+  color: var(--text-light);
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.otp-digit:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+  transform: scale(1.05);
+}
+
+/* =========================
+   Verify Button
+========================= */
+.verify-btn {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.verify-btn:hover {
+  background-color: #1e293b;
+  transform: scale(1.02);
+}
+
+/* =========================
+   Feedback Message
+========================= */
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  height: 20px;
+  transition: color 0.3s;
+}
+
+.message.success {
+  color: var(--success);
+}
+
+.message.error {
+  color: var(--error);
+}
+
+/* =========================
+   Accessibility Utility
+========================= */
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 500px) {
+  .otp-box {
+    gap: 12px;
+  }
+
+  .otp-digit {
+    width: 50px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .verify-btn {
+    width: 100%;
+  }
+
+  .otp-card h1 {
+    font-size: 18px;
+  }
+
+  .otp-card p {
+    font-size: 13px;
+  }
+}

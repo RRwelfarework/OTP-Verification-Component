@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="OTP Verification Component - Responsive and Accessible" />
+  <title>OTP Verification</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Simulated browser interface for visual design -->
+  <div class="browser">
+    <div class="window-bar">
+      <span class="dot red" aria-hidden="true"></span>
+      <span class="dot yellow" aria-hidden="true"></span>
+      <span class="dot green" aria-hidden="true"></span>
+    </div>
+
+    <!-- OTP Verification Component -->
+    <section class="otp-card" role="form" aria-label="OTP Verification Form">
+      <h1>Verify your email address</h1>
+      <p>A four-digit code has been sent to your email. Please enter the code below to verify your email address.</p>
+
+      <form id="otp-form" autocomplete="off" novalidate>
+        <fieldset class="otp-box">
+          <legend class="visually-hidden">Enter 4-digit OTP</legend>
+          <input type="text" class="otp-digit" maxlength="1" inputmode="numeric" aria-label="Digit 1" autocomplete="one-time-code" />
+          <input type="text" class="otp-digit" maxlength="1" inputmode="numeric" aria-label="Digit 2" autocomplete="one-time-code" />
+          <input type="text" class="otp-digit" maxlength="1" inputmode="numeric" aria-label="Digit 3" autocomplete="one-time-code" />
+          <input type="text" class="otp-digit" maxlength="1" inputmode="numeric" aria-label="Digit 4" autocomplete="one-time-code" />
+        </fieldset>
+
+        <button type="submit" class="verify-btn" aria-label="Verify One Time Password">Verify OTP</button>
+      </form>
+
+      <div class="message" id="message" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
